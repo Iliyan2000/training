@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Shop.h"
+#include "Engine.h"
 
 int main()
 {
-	Shop s;
+	Engine::i().run();
 	return 0;
 }

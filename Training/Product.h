@@ -4,7 +4,7 @@
 class Product
 {
 public:
-	Product() = default;
+	Product();
 
 private:
 	std::string name;
