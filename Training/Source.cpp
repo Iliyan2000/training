@@ -1,8 +1,8 @@
 #include <iostream>
+#include "Shop.h"
 
 int main()
 {
-	std::cout << "Hello world!" << std::endl;
-
+	Shop s;
 	return 0;
 }
