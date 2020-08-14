@@ -10,5 +10,5 @@ Engine::Engine()
 {}
 void Engine::run()
 {
-
+	Shop s;
 }
