@@ -18,5 +18,5 @@ private:
 	float price;
 };
 //(in/out)
-std::istream& operator>>(std::istream& in, const Product& obj);
+std::istream& operator>>(std::istream& in,Product& obj);
 std::ostream& operator<<(std::ostream& out, const Product& obj);

@@ -1,4 +1,5 @@
 #include "Shop.h"
+#include <fstream>
 
 //public
 Shop::Shop()
@@ -20,6 +21,25 @@ Shop& Shop::operator=(const Shop& other)
 Shop::~Shop()
 {
 	clear();
+}
+void Shop::Read_products(const std::string& file_name)
+{
+	std::ifstream in(file_name);
+	in >> quantity; in.get();
+	clear();
+	products = new Product[quantity];
+	for (size_t i = 0; i < quantity; i++)
+	{
+		in >> products[i];
+	}
+	in.close();
+}
+void Shop::Print_products()
+{
+	for (size_t i = 0; i < quantity; i++)
+	{
+		std::cout << products[i] << std::endl;
+	}
 }
 
 //private

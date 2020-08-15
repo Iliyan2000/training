@@ -39,6 +39,7 @@ std::istream& operator>>(std::istream& in, Product& obj)
 {
 	std::string trial_str;
 	std::getline(in, trial_str);
+	obj.setName("");
 	for (size_t i = 0; trial_str[i] != '-'; i++)
 	{
 		obj.setName(obj.getName() + trial_str[i]);

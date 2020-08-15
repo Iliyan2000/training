@@ -9,6 +9,9 @@ public:
 	Shop& operator=(const Shop& other);
 	~Shop();
 
+	void Read_products(const std::string& file_name);
+	void Print_products();
+
 private:
 	Product* products;
 	size_t quantity;

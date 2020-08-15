@@ -1,4 +1,5 @@
 #include "Engine.h"
+#include <fstream>
 
 Engine& Engine::i()
 {
@@ -8,6 +9,10 @@ Engine& Engine::i()
 void Engine::run()
 {
 	Shop s;
+	std::string str = "Shop1.txt";
+	//std::cin >> str;
+	s.Read_products(str);
+	s.Print_products();
 }
 
 Engine::Engine()
