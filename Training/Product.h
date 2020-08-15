@@ -11,6 +11,7 @@ public:
 	float getPrice() const { return price; }
 	void setName(const std::string& _name) { name = _name; }
 	void setPrice(const float& _price) { price = _price; }
+	Product operator>(const Product& other) const;
 
 private:
 	std::string name;

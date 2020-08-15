@@ -6,7 +6,6 @@ class Engine
 public:
 	Engine(const Engine& other) = delete;
 	Engine& operator=(const Engine& other) = delete;
-	~Engine() = default;
 
 	static Engine& i();
 	void run();
@@ -14,5 +13,6 @@ public:
 private:
 	Shop s;
 	Engine();
+	~Engine();
 };
 
