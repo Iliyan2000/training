@@ -12,6 +12,7 @@ void Engine::run()
 	std::string str = "Shop1.txt";
 	//std::cin >> str;
 	s.Read_products(str);
+	s.Sort();
 	s.Print_products();
 }
 

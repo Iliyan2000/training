@@ -11,7 +11,8 @@ public:
 	float getPrice() const { return price; }
 	void setName(const std::string& _name) { name = _name; }
 	void setPrice(const float& _price) { price = _price; }
-	Product operator>(const Product& other) const;
+	bool operator>(Product& other) const;
+	void Swap(Product& other);
 
 private:
 	std::string name;

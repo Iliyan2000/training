@@ -11,6 +11,7 @@ public:
 
 	void Read_products(const std::string& file_name);
 	void Print_products();
+	void Sort();
 
 private:
 	Product* products;

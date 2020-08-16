@@ -25,7 +25,7 @@ Shop::~Shop()
 void Shop::Read_products(const std::string& file_name)
 {
 	std::ifstream in(file_name);
-	in >> quantity; in.get();
+	in >> quantity;
 	clear();
 	products = new Product[quantity];
 	for (size_t i = 0; i < quantity; i++)
@@ -39,6 +39,19 @@ void Shop::Print_products()
 	for (size_t i = 0; i < quantity; i++)
 	{
 		std::cout << products[i] << std::endl;
+	}
+}
+void Shop::Sort()
+{
+	for (size_t i = 0; i < quantity; i++)
+	{
+		for (size_t j = i + 1; j < quantity; j++)
+		{
+			if (products[j] > products[i])
+			{
+				products[i].Swap(products[j]);
+			}
+		}
 	}
 }
 
