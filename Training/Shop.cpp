@@ -3,8 +3,10 @@
 
 //public
 Shop::Shop()
-	:quantity(1), products(new Product[quantity])
-{}
+	:quantity(1)
+{
+	products = new Product[quantity];
+}
 Shop::Shop(const Shop& other)
 {
 	copy(other);
@@ -25,12 +27,16 @@ Shop::~Shop()
 void Shop::Read_products(const std::string& file_name)
 {
 	std::ifstream in(file_name);
-	in >> quantity;
-	clear();
-	products = new Product[quantity];
-	for (size_t i = 0; i < quantity; i++)
+	for (size_t i = 0; in >> products[i]; i++)
 	{
-		in >> products[i];
+		Shop other(*this);
+		quantity++;
+		delete[]products;
+		products = new Product[quantity];
+		for (size_t j = 0; j < other.quantity; j++)
+		{
+			products[j] = other.products[j];
+		}
 	}
 	in.close();
 }
