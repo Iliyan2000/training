@@ -13,11 +13,12 @@ public:
 	void setPrice(const float& _price) { price = _price; }
 	bool operator>(Product& other) const;
 	void Swap(Product& other);
+	
+	//(in/out)
+	friend std::istream& operator>>(std::istream& in,Product& obj);
+	friend std::ostream& operator<<(std::ostream& out, const Product& obj);
 
 private:
 	std::string name;
 	float price;
 };
-//(in/out)
-std::istream& operator>>(std::istream& in,Product& obj);
-std::ostream& operator<<(std::ostream& out, const Product& obj);

@@ -42,7 +42,7 @@ void Shop::Read_products(const std::string& file_name)
 }
 void Shop::Print_products()
 {
-	for (size_t i = 0; i < quantity; i++)
+	for (size_t i = 0; i < quantity - 1; i++)
 	{
 		std::cout << products[i] << std::endl;
 	}

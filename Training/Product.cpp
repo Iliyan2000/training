@@ -44,16 +44,11 @@ void Product::Swap(Product& other)
 //(in/out)
 std::istream& operator>>(std::istream& in, Product& obj)
 {
-	std::string trial_str;
-	std::getline(in, trial_str, '-');
-	obj.setName(trial_str);
-	float trial_price;
-	in >> trial_price; in.get();
-	obj.setPrice(trial_price);
-	return in;
+	in.get(); std::getline(in, obj.name, '-');
+	return in >> obj.price;
 }
 std::ostream& operator<<(std::ostream& out, const Product& obj)
 {
 	out << std::fixed << std::setprecision(2);
-	return out << obj.getName() << '-' << obj.getPrice();
+	return out << obj.name << '-' << obj.price;
 }
